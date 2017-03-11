@@ -15,10 +15,10 @@
                     <a href="{{ url('/kategori-soal') }}">
                         Kategori Soal
                     </a>
-                </li>
+                </li>                
                 <li role="presentation">
-                    <a href="{{ url('/tipe-soal') }}">
-                        Tipe Soal
+                    <a href="{{ url('/soal') }}">
+                        Soal
                     </a>
                 </li>
             </ul>

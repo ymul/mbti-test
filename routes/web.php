@@ -20,5 +20,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('kategori-soal', 'KategoriSoalController');
-    Route::resource('tipe-soal', 'TipeSoalController');
+    Route::resource('soal', 'SoalsController');
 });

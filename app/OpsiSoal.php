@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class KategoriSoal extends Model {
+class OpsiSoal extends Model {
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'kategori_soals';
+    protected $table = 'opsi_soal';
 
     /**
      * The database primary key value.
@@ -25,6 +25,6 @@ class KategoriSoal extends Model {
      *
      * @var array
      */
-    protected $fillable = ['nama'];
+    protected $fillable = ['soal_id', 'opsi', 'nilai'];
 
 }
