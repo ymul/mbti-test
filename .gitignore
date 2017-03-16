@@ -5,6 +5,7 @@
 vendor/
 node_modules/
 npm-debug.log
+nbproject/
 
 # Laravel 5 & Lumen specific
 public/storage
