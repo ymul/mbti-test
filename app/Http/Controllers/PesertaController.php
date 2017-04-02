@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\KategoriSoal;
+use App\Peserta;
 use Illuminate\Http\Request;
 use Session;
+use App\User;
 
-class KategoriSoalController extends Controller {
+class PesertaController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -20,13 +21,13 @@ class KategoriSoalController extends Controller {
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $kategorisoal = KategoriSoal::where('nama', 'LIKE', "%$keyword%")
+            $peserta = Peserta::where('nama', 'LIKE', "%$keyword%")
                     ->paginate($perPage);
         } else {
-            $kategorisoal = KategoriSoal::paginate($perPage);
+            $peserta = Peserta::paginate($perPage);
         }
 
-        return view('kategori-soal.index', compact('kategorisoal'));
+        return view('peserta.index', compact('peserta'));
     }
 
     /**
@@ -35,7 +36,7 @@ class KategoriSoalController extends Controller {
      * @return \Illuminate\View\View
      */
     public function create() {
-        return view('kategori-soal.create');
+        return view('peserta.create');
     }
 
     /**
@@ -46,14 +47,28 @@ class KategoriSoalController extends Controller {
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request) {
+        $this->validate($request, array(
+            'nama' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed'));
 
-        $requestData = $request->all();
+        $user = new User();
+        $user->name = $request->nama;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
 
-        KategoriSoal::create($requestData);
+        // Jadikan user ini sebagai peserta
+        $user->assignRole('Peserta');
 
-        Session::flash('flash_message', 'KategoriSoal added!');
+        $peserta = new Peserta();
+        $peserta->nama = $request->nama;
+        $peserta->user_id = $user->id;
+        $peserta->save();
 
-        return redirect('kategori-soal');
+        Session::flash('flash_message', 'Peserta added!');
+
+        return redirect()->back();
     }
 
     /**
@@ -64,9 +79,9 @@ class KategoriSoalController extends Controller {
      * @return \Illuminate\View\View
      */
     public function show($id) {
-        $kategorisoal = KategoriSoal::findOrFail($id);
+        $peserta = Peserta::findOrFail($id);
 
-        return view('kategori-soal.show', compact('kategorisoal'));
+        return view('peserta.show', compact('peserta'));
     }
 
     /**
@@ -77,9 +92,9 @@ class KategoriSoalController extends Controller {
      * @return \Illuminate\View\View
      */
     public function edit($id) {
-        $kategorisoal = KategoriSoal::findOrFail($id);
+        $peserta = Peserta::findOrFail($id);
 
-        return view('kategori-soal.edit', compact('kategorisoal'));
+        return view('peserta.edit', compact('peserta'));
     }
 
     /**
@@ -94,12 +109,12 @@ class KategoriSoalController extends Controller {
 
         $requestData = $request->all();
 
-        $kategorisoal = KategoriSoal::findOrFail($id);
-        $kategorisoal->update($requestData);
+        $peserta = Peserta::findOrFail($id);
+        $peserta->update($requestData);
 
-        Session::flash('flash_message', 'KategoriSoal updated!');
+        Session::flash('flash_message', 'Peserta updated!');
 
-        return redirect('kategori-soal');
+        return redirect('peserta');
     }
 
     /**
@@ -110,11 +125,11 @@ class KategoriSoalController extends Controller {
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id) {
-        KategoriSoal::destroy($id);
+        Peserta::destroy($id);
 
-        Session::flash('flash_message', 'KategoriSoal deleted!');
+        Session::flash('flash_message', 'Peserta deleted!');
 
-        return redirect('kategori-soal');
+        return redirect('peserta');
     }
 
 }

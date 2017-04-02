@@ -68,18 +68,8 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Psikotest
-                </div>
-                @if (Route::has('login'))
-                    <div class="links">
-                        @if (Auth::check())
-                            <a href="{{ url('/home') }}">Home</a>
-                        @else
-                            <a href="{{ url('/login') }}">Login</a>
-                            <a href="{{ url('/peserta') }}">Register Peserta</a>
-                        @endif
-                    </div>
-                @endif
+                    <p>Page Not Found</p>
+                </div> 
             </div>
         </div>
     </body>

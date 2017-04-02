@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class KategoriSoal extends Model {
+class Peserta extends Model {
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'kategori_soals';
+    protected $table = 'peserta';
 
     /**
      * The database primary key value.
@@ -26,9 +26,5 @@ class KategoriSoal extends Model {
      * @var array
      */
     protected $fillable = ['nama'];
-
-    function soal() {
-        return $this->hasMany('App\Soal', 'kategori_soal_id');
-    }
 
 }

@@ -17,8 +17,20 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');
-
+Route::resource('peserta', 'PesertaController');
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('kategori-soal', 'KategoriSoalController');
     Route::resource('soal', 'SoalsController');
+    Route::get('soal-test', [
+        'uses' => 'SoalTestController@soalTest',
+        'middleware' => 'role:Peserta',
+    ]);
+    Route::get('soal-test/form/{id}', [
+        'uses' => 'SoalTestController@formTest',
+        'middleware' => 'role:Peserta',
+    ]);
+    Route::post('soal-test/form/{id}', [
+        'uses' => 'SoalTestController@proccessTest',
+        'middleware' => 'role:Peserta',
+    ]);
 });
