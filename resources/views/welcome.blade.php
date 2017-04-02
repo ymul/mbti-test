@@ -76,7 +76,7 @@
                             <a href="{{ url('/home') }}">Home</a>
                         @else
                             <a href="{{ url('/login') }}">Login</a>
-                            <a href="{{ url('/peserta') }}">Register Peserta</a>
+                            <a href="{{ url('/peserta/create') }}">Register Peserta</a>
                         @endif
                     </div>
                 @endif
