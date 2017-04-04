@@ -10,6 +10,7 @@ use App\PenilaianPeserta;
 use App\PenilaianPesertaDetail;
 use App\OpsiSoal;
 use App\Peserta;
+use App\KategoriSoalPenilaian;
 use Illuminate\Support\Facades\Auth;
 
 class SoalTestController extends Controller {
@@ -58,7 +59,12 @@ class SoalTestController extends Controller {
         endforeach;
         $penilaianPeserta->total_nilai = $totalNilai;
         $penilaianPeserta->save();
-        return redirect('soal-test');
+
+        //get result
+        $kategoriSoalPenilaian = new KategoriSoalPenilaian();
+        $result = $kategoriSoalPenilaian->getResult($kategoriSoal->id, $totalNilai);
+        Session::flash('flash_message', 'Successfully Processed!');
+        return view('soal-test.result-test', compact('result', 'kategoriSoal'));
     }
 
 }

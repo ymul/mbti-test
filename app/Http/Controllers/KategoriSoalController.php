@@ -50,11 +50,10 @@ class KategoriSoalController extends Controller {
 
         $requestData = $request->all();
 
-        KategoriSoal::create($requestData);
+        $kategoriSoal = KategoriSoal::create($requestData);
 
         Session::flash('flash_message', 'KategoriSoal added!');
-
-        return redirect('kategori-soal');
+        return redirect()->action('KategoriSoalController@edit', ['id' => $kategoriSoal->id]);
     }
 
     /**
