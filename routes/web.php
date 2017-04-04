@@ -29,6 +29,11 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'SoalTestController@formTest',
         'middleware' => 'role:Peserta',
     ]);
+    Route::post('kategori-soal/{id}/add/result', [
+        'uses' => 'KategoriSoalController@addResult',
+        'middleware' => 'role:Admin',
+    ]);
+    Route::delete('kategori-soal/result/delete/{id}', ['middleware' => 'role:Admin', 'as' => 'kategori-soal.result.destroy', 'uses' => 'KategoriSoalController@destroyResult']);
     Route::post('soal-test/form/{id}', [
         'uses' => 'SoalTestController@proccessTest',
         'middleware' => 'role:Peserta',

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\KategoriSoal;
 use Illuminate\Http\Request;
 use Session;
+use App\KategoriSoalPenilaian;
 
 class KategoriSoalController extends Controller {
 
@@ -97,9 +98,25 @@ class KategoriSoalController extends Controller {
         $kategorisoal = KategoriSoal::findOrFail($id);
         $kategorisoal->update($requestData);
 
-        Session::flash('flash_message', 'KategoriSoal updated!');
+        Session::flash('flash_message', 'KategoriSoal added!');
 
         return redirect('kategori-soal');
+    }
+
+    public function addResult(Request $request, $kategoriId) {
+        $this->validate($request, [
+            'range_awal' => 'required',
+            'range_akhir' => 'required',
+            'hasil' => 'required'
+        ]);
+        $kategoriPenilaian = new KategoriSoalPenilaian();
+        $kategoriPenilaian->kategori_id = $kategoriId;
+        $kategoriPenilaian->range_awal = $request->range_awal;
+        $kategoriPenilaian->range_akhir = $request->range_akhir;
+        $kategoriPenilaian->hasil = $request->hasil;
+        $kategoriPenilaian->save();
+        Session::flash('flash_message', 'Result added!');
+        return redirect()->back();
     }
 
     /**
@@ -115,6 +132,13 @@ class KategoriSoalController extends Controller {
         Session::flash('flash_message', 'KategoriSoal deleted!');
 
         return redirect('kategori-soal');
+    }
+
+    public function destroyResult($id) {
+        KategoriSoalPenilaian::destroy($id);
+        Session::flash('flash_message', 'Result deleted!');
+
+        return redirect()->back();
     }
 
 }
