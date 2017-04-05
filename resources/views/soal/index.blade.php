@@ -45,8 +45,8 @@
                                     <td>{{ $item->tipeSoal->nama }}</td>
                                     <td>{{ $item->soal }}</td>
                                     <td>
-                                        <a href="{{ url('/soal/' . $item->id) }}" title="View Soal"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                        <a href="{{ url('/soal/' . $item->id . '/edit') }}" title="Edit Soal"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        <a href="{{ url('/soal/' . $item->id) }}" title="View Soal"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                        <a href="{{ url('/soal/' . $item->id . '/edit') }}" title="Edit Soal"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                         {!! Form::open([
                                         'method'=>'DELETE',
                                         'url' => ['/soal', $item->id],
@@ -54,7 +54,7 @@
                                         ]) !!}
                                         {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
                                         'type' => 'submit',
-                                        'class' => 'btn btn-danger btn-xs',
+                                        'class' => 'btn btn-danger btn-sm',
                                         'title' => 'Delete Soal',
                                         'onclick'=>'return confirm("Confirm delete?")'
                                         )) !!}

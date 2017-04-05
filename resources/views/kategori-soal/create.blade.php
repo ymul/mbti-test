@@ -7,9 +7,9 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create New KategoriSoal</div>
+                    <div class="panel-heading">Create New Kategori Soal</div>
                     <div class="panel-body">
-                        <a href="{{ url('/kategori-soal') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/kategori-soal') }}" title="Back"><button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -21,7 +21,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/kategori-soal', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/kategori-soal', 'class' => '', 'files' => true]) !!}
 
                         @include ('kategori-soal.form')
 

@@ -10,7 +10,7 @@
                     <div class="panel-heading">Create New Soal</div>
                     <div class="panel-body">
                         <a href="{{ url('/soal') }}" title="Back">
-                            <button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+                            <button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
                         </a>
                         <br />
                         <br />
@@ -23,7 +23,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/soal', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/soal', 'class' => '', 'files' => true]) !!}
 
                         @include ('soal.form')
 

@@ -1,5 +1,5 @@
 <div class="col-md-3">
-    <div class="panel panel-default panel-flush">
+    <div class="panel panel-default panel-flush sidebar">
         <div class="panel-heading">
             Sidebar
         </div>

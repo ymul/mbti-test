@@ -12,9 +12,9 @@
 
         <div class="col-md-9">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit KategoriSoal #{{ $kategorisoal->id }}</div>
+                <div class="panel-heading">Edit Kategori Soal #{{ $kategorisoal->id }}</div>
                 <div class="panel-body">
-                    <a href="{{ url('/kategori-soal') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                    <a href="{{ url('/kategori-soal') }}" title="Back"><button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                     <br />
                     <br />
 
@@ -29,7 +29,7 @@
                     {!! Form::model($kategorisoal, [
                     'method' => 'PATCH',
                     'url' => ['/kategori-soal', $kategorisoal->id],
-                    'class' => 'form-horizontal',
+                    'class' => '',
                     'files' => true
                     ]) !!}
 
@@ -37,37 +37,37 @@
 
                     {!! Form::close() !!}
 
-                    {!! Form::open(['url' => '/kategori-soal/'.$kategorisoal->id.'/add/result', 'class' => 'form-horizontal']) !!}
+                    {!! Form::open(['url' => '/kategori-soal/'.$kategorisoal->id.'/add/result', 'class' => '']) !!}
 
                     <div class="form-group {{ $errors->has('range_awal') ? 'has-error' : ''}}">
-                        {!! Form::label('range_awal', 'Range Awal', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('range_awal', 'Range Awal', ['class' => 'col-md-2 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::number('range_awal', 0, ['class' => 'form-control']) !!}
                             {!! $errors->first('range_awal', '<p class="help-block">:message</p>') !!}
                         </div>
                     </div>
                     <div class="form-group {{ $errors->has('range_akhir') ? 'has-error' : ''}}">
-                        {!! Form::label('range_akhir', 'Range Akhir', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('range_akhir', 'Range Akhir', ['class' => 'col-md-2 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::number('range_akhir', 0, ['class' => 'form-control']) !!}
                             {!! $errors->first('range_akhir', '<p class="help-block">:message</p>') !!}
                         </div>
                     </div>
                     <div class="form-group {{ $errors->has('range_akhir') ? 'has-error' : ''}}">
-                        {!! Form::label('hasil', 'Hasil', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('hasil', 'Hasil', ['class' => 'col-md-2 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::textarea('hasil', '', ['class' => 'form-control']) !!}
                             {!! $errors->first('hasil', '<p class="help-block">:message</p>') !!}
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-4 col-md-4">
+                        <div class="col-md-offset-2 col-md-4">
                             {!! Form::submit('Add Hasil', ['class' => 'btn btn-primary']) !!}
                         </div>
                     </div>
 
                     {!! Form::close() !!}
-                    <h2>Result :</h2>
+                    <h4>Result :</h4>
                     <table class="table table-bordered">
                         <tr>
                             <th>#</th>
@@ -91,7 +91,7 @@
                                 ]) !!}
                                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
                                 'type' => 'submit',
-                                'class' => 'btn btn-danger btn-xs',
+                                'class' => 'btn btn-danger btn-sm',
                                 'title' => 'Delete Result',
                                 'onclick'=>'return confirm("Confirm delete?")'
                                 )) !!}

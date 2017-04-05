@@ -10,7 +10,7 @@
                 <div class="panel-heading">Test - {{$kategoriSoal->nama}}</div>
                 <div class="panel-body">
                     <a href="{{ url('/kategori-soal') }}" title="Back">
-                        <button class="btn btn-warning btn-xs">
+                        <button class="btn btn-info btn-sm">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
                         </button>
                     </a>
@@ -28,11 +28,11 @@
                     {!! Form::open(['url' => '/soal-test/form/'.$kategoriSoal->id, 'class' => 'form-horizontal', 'files' => true]) !!}
                     @foreach($kategoriSoal->soal as $row)
                     <div class="col-lg-12" style="margin-bottom:20px;">
-                        <div class="col-md-12">
+                        <div class="col-md-12 question">
                             {{$counterSoal++ . '. ' . $row->soal}}
                         </div>
                         @foreach($row->opsiSoal as $os)
-                        <div class="col-md-3">
+                        <div class="col-md-3 choice">
                             {!! Form::radio('soal'.$row->id, $os->id, null, ['class' => 'form-control', 'required' => 'required']) !!}
                             {{$os->opsi}}. 
                             {{$os->jawaban}}

@@ -15,7 +15,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Create New Peserta</div>
                 <div class="panel-body">
-                    <a href="{{ url('/peserta') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                    <a href="{{ url('/peserta') }}" title="Back"><button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                     <br />
                     <br />
 
@@ -27,7 +27,7 @@
                     </ul>
                     @endif
 
-                    {!! Form::open(['url' => '/peserta', 'class' => 'form-horizontal', 'files' => true]) !!}
+                    {!! Form::open(['url' => '/peserta', 'class' => '', 'files' => true]) !!}
 
                     @include ('peserta.form')
 
