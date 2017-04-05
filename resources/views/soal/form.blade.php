@@ -1,6 +1,6 @@
 <div class="col-lg-12">
     <div class="form-group {{ $errors->has('kategori_soal_id') ? 'has-error' : ''}}">
-        {!! Form::label('kategori_soal_id', 'Kategori Soal', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('kategori_soal_id', 'Kategori Soal', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::select('kategori_soal_id', $kategoriSoal, null, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! Form::hidden('tipe_soal_id', 1, ['required' => 'required']) !!}
@@ -8,14 +8,14 @@
         </div>
     </div>
     <div class="form-group {{ $errors->has('soal') ? 'has-error' : ''}}">
-        {!! Form::label('soal', 'Soal', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('soal', 'Soal', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('soal', null, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('soal', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('urutan') ? 'has-error' : ''}}">
-        {!! Form::label('urutan', 'Urutan', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('urutan', 'Urutan', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::number('urutan', null, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('urutan', '<p class="help-block">:message</p>') !!}
@@ -24,56 +24,56 @@
 </div>
 <div class="col-lg-12" id="pilihan-ganda">
     <div class="form-group {{ $errors->has('a') ? 'has-error' : ''}}">
-        {!! Form::label('a', 'A', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('a', 'A', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('a', (isset($checkOpsiA)? $checkOpsiA->jawaban : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('a', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('a_nilai') ? 'has-error' : ''}}">
-        {!! Form::label('a_nilai', 'Nilai A', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('a_nilai', 'Nilai A', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::number('a_nilai', (isset($checkOpsiA)? $checkOpsiA->nilai : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('a_nilai', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('b') ? 'has-error' : ''}}">
-        {!! Form::label('b', 'B', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('b', 'B', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('b', (isset($checkOpsiB)? $checkOpsiB->jawaban : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('b', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('b_nilai') ? 'has-error' : ''}}">
-        {!! Form::label('b_nilai', 'Nilai B', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('b_nilai', 'Nilai B', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::number('b_nilai', (isset($checkOpsiB)? $checkOpsiB->nilai : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('b_nilai', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('c') ? 'has-error' : ''}}">
-        {!! Form::label('c', 'C', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('c', 'C', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('c', (isset($checkOpsiC)? $checkOpsiC->jawaban : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('c', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('c_nilai') ? 'has-error' : ''}}">
-        {!! Form::label('c_nilai', 'Nilai C', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('c_nilai', 'Nilai C', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::number('c_nilai', (isset($checkOpsiC)? $checkOpsiC->nilai : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('c_nilai', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('d') ? 'has-error' : ''}}">
-        {!! Form::label('d', 'D', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('d', 'D', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('d', (isset($checkOpsiD)? $checkOpsiD->jawaban : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('d', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('d_nilai') ? 'has-error' : ''}}">
-        {!! Form::label('d_nilai', 'Nilai D', ['class' => 'col-md-4 control-label']) !!}
+        {!! Form::label('d_nilai', 'Nilai D', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
             {!! Form::number('d_nilai', (isset($checkOpsiD)? $checkOpsiD->nilai : null), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('d_nilai', '<p class="help-block">:message</p>') !!}
@@ -82,7 +82,7 @@
 </div>
 <div class="col-lg-12">
     <div class="form-group">
-        <div class="col-md-offset-4 col-md-4">
+        <div class="col-md-offset-2 col-md-4">
             {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Create', ['class' => 'btn btn-primary']) !!}
         </div>
     </div>

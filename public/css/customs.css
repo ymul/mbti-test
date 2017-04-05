@@ -1,0 +1,40 @@
+.form-group{
+	float: left;
+	width: 100%;
+}
+
+.panel-default .panel-heading{
+	color: #fff;
+	background-color: #3498db;
+}
+
+.sidebar .nav li a{
+	padding: 5px 0;
+	color: #333;
+	transition: all 0.3s ease;
+}
+
+.sidebar .nav li a:hover, .sidebar .nav li a:focus{
+	background-color: transparent;
+	color: #3498db;
+}
+
+input[type="radio"], input[type="checkbox"]{
+	box-shadow: none;
+	border: none;
+	margin-bottom: 5px;
+}
+
+input[type="radio"]:focus, input[type="checkbox"]:focus{
+	box-shadow: none;
+	border: none;
+}
+
+.choice{
+	text-align: center;
+}
+
+.question{
+	font-size: 14px;
+	margin-bottom: 10px;
+}

@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Soal #{{ $soal->id }}</div>
                 <div class="panel-body">
-                    <a href="{{ url('/soal') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                    <a href="{{ url('/soal') }}" title="Back"><button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                     <br />
                     <br />
 
@@ -24,7 +24,7 @@
                     {!! Form::model($soal, [
                     'method' => 'PATCH',
                     'url' => ['/soal', $soal->id],
-                    'class' => 'form-horizontal',
+                    'class' => '',
                     'files' => true
                     ]) !!}
 
