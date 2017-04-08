@@ -51,34 +51,6 @@
             {!! $errors->first('b_nilai', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
-    <div class="form-group {{ $errors->has('c') ? 'has-error' : ''}}">
-        {!! Form::label('c', 'C', ['class' => 'col-md-2 control-label']) !!}
-        <div class="col-md-6">
-            {!! Form::text('c', (isset($checkOpsiC)? $checkOpsiC->jawaban : null), ['class' => 'form-control', 'required' => 'required']) !!}
-            {!! $errors->first('c', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-    <div class="form-group {{ $errors->has('c_nilai') ? 'has-error' : ''}}">
-        {!! Form::label('c_nilai', 'Nilai C', ['class' => 'col-md-2 control-label']) !!}
-        <div class="col-md-6">
-            {!! Form::number('c_nilai', (isset($checkOpsiC)? $checkOpsiC->nilai : null), ['class' => 'form-control', 'required' => 'required']) !!}
-            {!! $errors->first('c_nilai', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-    <div class="form-group {{ $errors->has('d') ? 'has-error' : ''}}">
-        {!! Form::label('d', 'D', ['class' => 'col-md-2 control-label']) !!}
-        <div class="col-md-6">
-            {!! Form::text('d', (isset($checkOpsiD)? $checkOpsiD->jawaban : null), ['class' => 'form-control', 'required' => 'required']) !!}
-            {!! $errors->first('d', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-    <div class="form-group {{ $errors->has('d_nilai') ? 'has-error' : ''}}">
-        {!! Form::label('d_nilai', 'Nilai D', ['class' => 'col-md-2 control-label']) !!}
-        <div class="col-md-6">
-            {!! Form::number('d_nilai', (isset($checkOpsiD)? $checkOpsiD->nilai : null), ['class' => 'form-control', 'required' => 'required']) !!}
-            {!! $errors->first('d_nilai', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
 </div>
 <div class="col-lg-12">
     <div class="form-group">

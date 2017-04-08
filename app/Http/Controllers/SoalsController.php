@@ -87,20 +87,6 @@ class SoalsController extends Controller {
             $opsiB->jawaban = $request->b;
             $opsiB->nilai = $request->b_nilai;
             $opsiB->save();
-
-            $opsiC = new OpsiSoal();
-            $opsiC->soal_id = $soal->id;
-            $opsiC->opsi = 'C';
-            $opsiC->jawaban = $request->c;
-            $opsiC->nilai = $request->c_nilai;
-            $opsiC->save();
-
-            $opsiD = new OpsiSoal();
-            $opsiD->soal_id = $soal->id;
-            $opsiD->opsi = 'D';
-            $opsiD->jawaban = $request->d;
-            $opsiD->nilai = $request->d_nilai;
-            $opsiD->save();
         }
 
         Session::flash('flash_message', 'Soal added!');
@@ -198,34 +184,6 @@ class SoalsController extends Controller {
             $opsiB->jawaban = $request->b;
             $opsiB->nilai = $request->b_nilai;
             $opsiB->save();
-            
-            $checkOpsiC = OpsiSoal::where('opsi', '=', 'C')->where('soal_id', '=', $id);
-            
-            if($checkOpsiC->count() > 0){
-                $opsiC = OpsiSoal::find($checkOpsiC->first()->id);
-            }else{
-                $opsiC = new OpsiSoal();
-            }
-
-            $opsiC->soal_id = $soal->id;
-            $opsiC->opsi = 'C';
-            $opsiC->jawaban = $request->c;
-            $opsiC->nilai = $request->c_nilai;
-            $opsiC->save();
-
-            $checkOpsiD = OpsiSoal::where('opsi', '=', 'D')->where('soal_id', '=', $id);
-            
-            if($checkOpsiD->count() > 0){
-                $opsiD = OpsiSoal::find($checkOpsiD->first()->id);
-            }else{
-                $opsiD = new OpsiSoal();
-            }
-            
-            $opsiD->soal_id = $soal->id;
-            $opsiD->opsi = 'D';
-            $opsiD->jawaban = $request->d;
-            $opsiD->nilai = $request->d_nilai;
-            $opsiD->save();
         }
 
         Session::flash('flash_message', 'Soal updated!');
