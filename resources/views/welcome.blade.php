@@ -46,25 +46,41 @@
             }
 
             .title {
+                color: #FFF;
                 font-size: 84px;
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
+                color: #fff;
+                padding: 0 25px 7px 25px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                top: 0;
+                position: relative;
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+            .links > a:hover{
+                top: -4px;
+                border-color: #fff;
             }
 
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            body.bg-image{
+                background: #24C6DC;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
         </style>
     </head>
-    <body>
+    <body class="bg-image">
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">

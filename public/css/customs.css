@@ -38,3 +38,13 @@ input[type="radio"]:focus, input[type="checkbox"]:focus{
 	font-size: 14px;
 	margin-bottom: 10px;
 }
+
+.pilihanganda{
+	padding-left: 60px;
+}
+
+.result{
+	line-height: 1.8;
+	width: 60%;
+	margin: 30px auto;
+}

@@ -22,7 +22,8 @@
         </div>
     </div>
 </div>
-<div class="col-lg-12" id="pilihan-ganda">
+<label class="col-md-12"><h4 class="col-md-12">Opsi Jawaban</h4></label>
+<div class="col-lg-12 pilihanganda" id="pilihan-ganda">
     <div class="form-group {{ $errors->has('a') ? 'has-error' : ''}}">
         {!! Form::label('a', 'A', ['class' => 'col-md-2 control-label']) !!}
         <div class="col-md-6">
@@ -54,7 +55,7 @@
 </div>
 <div class="col-lg-12">
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-4">
+        <div class="col-md-4">
             {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Create', ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
