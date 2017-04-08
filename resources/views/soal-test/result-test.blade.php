@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Hasil Test - {{$kategoriSoal->nama}}</div>
                 <div class="panel-body">
-                    {{$result->hasil}}
+                    <h4 class="text-center result">"{{$result->hasil}}"</h4>
                 </div>
             </div>
         </div>
