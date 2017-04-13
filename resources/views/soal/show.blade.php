@@ -17,36 +17,35 @@
                     'url' => ['soal', $soal->id],
                     'style' => 'display:inline'
                     ]) !!}
-                    {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
-                    'type' => 'submit',
-                    'class' => 'btn btn-danger btn-sm',
-                    'title' => 'Delete Soal',
-                    'onclick'=>'return confirm("Confirm delete?")'
-                    ))!!}
+                    {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array('type' => 'submit','class' => 'btn btn-danger btn-sm','title' => 'Delete Soal','onclick'=>'return confirm("Confirm delete?")'))!!}
                     {!! Form::close() !!}
                     <br/>
                     <br/>
 
                     <div class="table-responsive">
-                        <table class="table table-borderless">
-                            <tbody>
-                                <tr>
-                                    <th>ID</th><td>{{ $soal->id }}</td>
-                                </tr>
-                                <tr>
-                                    <th> Kategori Soal Id </th>
-                                    <td> {{ $soal->kategori_soal_id }} </td>
-                                </tr>
-                                <tr>
-                                    <th> Tipe Soal Id </th>
-                                    <td> {{ $soal->tipe_soal_id }} </td>
-                                </tr>
-                                <tr>
-                                    <th> Soal </th>
-                                    <td> {{ $soal->soal }} </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="col-lg-12">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <th>ID</th><td>{{ $soal->id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Kategori Soal Id </th>
+                                        <td> {{ $soal->kategoriSoal->nama }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Soal </th>
+                                        <td> {{ $soal->soal }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-12">
+                            <h3>Opsi Jawaban</h3>
+                            @foreach($soal->opsiSoal as $row)
+                            <p>{{$row->opsi}}. {{$row->jawaban}} (<b>Nilai : {{$row->nilai}}</b>)</p>
+                            @endforeach
+                        </div>
                     </div>
 
                 </div>
