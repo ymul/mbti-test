@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder {
         $this->call(TipeSoalSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(UserAdminSeeder::class);
+        $this->call(AddSoalMBTISeeder::class);
     }
 
 }

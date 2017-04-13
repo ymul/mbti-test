@@ -37,19 +37,22 @@
 
                     {!! Form::open(['url' => '/soal-test/form/'.$kategoriSoal->id, 'class' => 'form-horizontal', 'files' => true]) !!}
                     @foreach($kategoriSoal->soal as $row)
-                    <div class="col-lg-12">
-                        <div class="question">
+                        <div class="col-md-12 question">
                             {{$counterSoal++ . '. ' . $row->soal}}
                         </div>
                         @foreach($row->opsiSoal as $os)
-                        <div class="choice">
+                        <div class="col-md-1">
                             {!! Form::radio('soal'.$row->id, $os->id, null, ['class' => 'form-control', 'required' => 'required']) !!}
+                        </div>
+                        <div class="col-md-1 text-center">
                             {{$os->opsi}}. 
+                        </div>
+                        <div class="col-md-10" style="margin-bottom: 30px;">
                             {{$os->jawaban}}
                         </div>
+                        <br>
                         @endforeach
                         <hr />
-                    </div>
                     @endforeach
                     <div class='col-lg-12'>
                         {!! Form::submit('Proses', ['class'=>'btn btn-primary']) !!}
