@@ -31,7 +31,15 @@ input[type="radio"]:focus, input[type="checkbox"]:focus{
 }
 
 .choice{
-	text-align: center;
+	padding-left: 15px;
+}
+
+.choice input[type="radio"]{
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	display: inline-block;
 }
 
 .question{
@@ -47,4 +55,15 @@ input[type="radio"]:focus, input[type="checkbox"]:focus{
 	line-height: 1.8;
 	width: 60%;
 	margin: 30px auto;
+}
+
+.notice{
+	padding-left: 15px;
+	font-size: 16px;
+}
+
+hr{
+	float: left;
+	width: 100%;
+	border-top: 1px dashed rgba(51, 51, 51, 0.4);
 }
