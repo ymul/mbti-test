@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Test - {{$kategoriSoal->nama}}</div>
                 <div class="panel-body">
-                    <a href="{{ url('/kategori-soal') }}" title="Back">
+                    <a href="{{ url('/soal-test') }}" title="Back">
                         <button class="btn btn-info btn-sm">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
                         </button>
