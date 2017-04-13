@@ -9,7 +9,7 @@
 
 ## Cara Install
 
-- Pastikan sudah terinstall composer pada PC anda, jika belum bisa kunjungi web <a href="https://getcomposer.org/">Dokumentasi Composer</a>
+- Pastikan sudah terinstall composer pada PC anda, jika belum bisa kunjungi web <a href="https://getcomposer.org/" target="_blank">Dokumentasi Composer</a>
 - Jika sudah ter-install GIT pada PC anda silahkan clone dengan command `git clone https://github.com/ymul/mbti-test.git [nama-folder]` pada console git bash atau aplikasi sourcetree / semacam nya.
 - Jika anda tidak menggunakan GIT maka download versi ZIP, kemudian extract pada folder htdocs jika anda menggunakan XAMPP.
 - Kemudian klik kanan pada Folder project tsb kemudian pilih opsi `Composer Install`, tunggu sampai selesai.
